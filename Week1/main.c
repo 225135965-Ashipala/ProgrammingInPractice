@@ -1,35 +1,27 @@
-/* Declare the standard I/O functions when the editor cannot locate stdio.h. */
-extern int printf(const char *format, ...);
-extern int scanf(const char *format, ...);
+#include <stdio.h>
 
 int main()
 {
-    float basicSalary;
-    float housing;
-    float transport;
-    float tax;
-    float grossSalary;
-    float netSalary;
+    char municipality[50];
+    char mayor[50];
+    int population;
 
-    printf("EMPLOYEE SALARY CALCULATOR\n");
+    printf("Municipal Financial Management System\n\n");
 
-    printf("Enter basic salary: ");
-    scanf("%f", &basicSalary);
+    printf("Enter Municipality Name: ");
+    scanf("%49s", municipality);
 
-    printf("Enter housing allowance: ");
-    scanf("%f", &housing);
+    printf("Enter Mayor: ");
+    scanf("%49s", mayor);
 
-    printf("Enter transport allowance: ");
-    scanf("%f", &transport);
+    printf("Enter Population: ");
+    scanf("%d", &population);
 
-    printf("Enter tax: ");
-    scanf("%f", &tax);
+    printf("\n---------------------------------\n");
 
-    grossSalary = basicSalary + housing + transport;
-    netSalary = grossSalary - tax;
-
-    printf("\nGross Salary: %.2f\n", grossSalary);
-    printf("Net Salary: %.2f\n", netSalary);
+    printf("Municipality : %s\n", municipality);
+    printf("Mayor         : %s\n", mayor);
+    printf("Population    : %d\n", population);
 
     return 0;
 }
