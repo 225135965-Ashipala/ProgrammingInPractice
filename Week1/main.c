@@ -1,23 +1,43 @@
-#include <stdio.h> 
-int main() 
-{ 
-float basicSalary; 
-float housing; 
-float transport; 
-float tax; 
-float grossSalary; 
-float netSalary; 
-printf("Enter basic salary: "); 
-scanf("%f", &basicSalary); 
-printf("Enter housing allowance: "); 
-scanf("%f", &housing); 
-printf("Enter transport allowance: "); 
-scanf("%f", &transport); 
-printf("Enter tax: "); 
-scanf("%f", &tax); 
-grossSalary = basicSalary + housing + transport; 
-netSalary = grossSalary - tax;
-printf("\nGross Salary: %.2f\n", grossSalary); 
-printf("Net Salary: %.2f\n", netSalary); 
-return 0; 
-} 
+#include <stdio.h>
+
+int main()
+{
+    char supplierName[50];
+    float price;
+    float budget;
+    int registered;
+    int documentsComplete;
+
+    printf("Enter supplier name: ");
+    scanf("%49s", supplierName);
+
+    printf("Enter tender price: ");
+    scanf("%f", &price);
+
+    printf("Enter available budget: ");
+    scanf("%f", &budget);
+
+    printf("Is supplier registered? (1=Yes, 0=No): ");
+    scanf("%d", &registered);
+
+    printf("Are all documents complete? (1=Yes, 0=No): ");
+    scanf("%d", &documentsComplete);
+
+    if (registered == 0 || documentsComplete == 0)
+    {
+        printf("\nSupplier: %s\n", supplierName);
+        printf("Status: Disqualified\n");
+    }
+    else if (price > budget)
+    {
+        printf("\nSupplier: %s\n", supplierName);
+        printf("Status: Disqualified\n");
+    }
+    else
+    {
+        printf("\nSupplier: %s\n", supplierName);
+        printf("Status: Qualified\n");
+    }
+
+    return 0;
+}
